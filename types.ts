@@ -1,5 +1,5 @@
 
-export type CategoryType = 'INTERNET' | 'IPTV' | 'COMBO';
+export type CategoryType = 'INTERNET' | 'IPTV' | 'COMBO' | 'CERTIFICADO';
 export type BillingPeriod = 'MENSAL' | '2 MESES' | '3 MESES' | '4 MESES' | '5 MESES' | '6 MESES' | 'ANUAL' | 'ÚNICO';
 
 export interface ServiceSpec {
@@ -11,7 +11,7 @@ export interface Plan {
   id: string;
   title: string;
   category: CategoryType;
-  subCategory?: string; // Novo campo para agrupamento (Smartphone vs Smart TV)
+  subCategory?: string;
   price: number;
   period: BillingPeriod;
   specs: ServiceSpec[];
@@ -24,7 +24,7 @@ export interface AppState {
   activeCategory: CategoryType;
 }
 
-// Betting App Types (Mantidos para compatibilidade de esquema)
+// Betting App Types
 export type Outcome = 'HOME' | 'DRAW' | 'AWAY';
 export type UserRole = 'ADMIN' | 'CLIENT' | 'CAMBISTA';
 
